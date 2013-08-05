@@ -895,6 +895,7 @@
 			if (this.picker.is(':not(:visible)')){
 				if (e.keyCode == 27) // allow escape to hide and re-show picker
 					this.show();
+					e.stopPropagation();
 				return;
 			}
 			var dateChanged = false,
@@ -904,6 +905,7 @@
 				case 27: // escape
 					this.hide();
 					e.preventDefault();
+					e.stopPropagation();
 					break;
 				case 37: // left
 				case 39: // right
